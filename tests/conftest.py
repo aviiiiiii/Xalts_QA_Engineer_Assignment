@@ -34,16 +34,11 @@ def pytest_runtest_makereport(item):
             file_name = os.path.join(reports_dir, report.nodeid.replace("::", "_") + ".png")
             print("file name is " + file_name)
             _capture_screenshot(file_name)
-
-
-            #
             with open(file_name, "rb") as f:
                 image_data = f.read()
             encoded_img = base64.b64encode(image_data).decode('utf-8')
             html_img = (f'<img src="data:image/png;base64,{encoded_img}" alt="screenshot" '
                         f'style="width:300px;height:auto;" />')
-
-            #
             extra.append(pytest_html.extras.html(html_img))
         report.extras = extra
 
