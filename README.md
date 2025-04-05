@@ -3,7 +3,7 @@ I have written the automated testcases for the Sign-Up, Sign-In and Sign-Out sce
 I have used pytest with page object model and pytest-html report
 
 List of automted testcases are
-1. Sign-Up
+1. Sign-Up 
   i. Positive - Successful Sign-Up
   ii. Negative - Sign-Up with invalid email
   iii. Negative - Sign-Up with invalid password
