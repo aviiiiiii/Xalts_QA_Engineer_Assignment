@@ -1,3 +1,6 @@
+import random
+import string
+
 from pages.Homepage import HomePage
 from pages.SigninPage import SigninPage
 
@@ -9,7 +12,9 @@ class Test_SignUp:
         homePage.click_signin_link()
         print("Sign-up Clicked")
         signinPage = SigninPage(driver)
-        signinPage.enter_email("xalts005@gmail.com")
+        random_string = ''.join(random.choices(string.digits, k=6))
+        email = "xalts"+random_string+"@gmail.com"
+        signinPage.enter_email(email)
         print("Email entered")
         signinPage.enter_password("Admin@1234")
         print("Password entered")
@@ -72,7 +77,7 @@ class Test_SignUp:
             raise Exception("Error Message is not displayed")
         print("Error Message is displayed")
 
-    def test_negative_signup_sameEmail(self, browserInstance, request):
+    def test_negative_signup_sameEmail(self, browserInstance):
         driver = browserInstance
         homePage = HomePage(driver)
         homePage.click_signin_link()
