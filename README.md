@@ -1,6 +1,6 @@
 I have written the automated testcases for the Sign-Up, Sign-In and Sign-Out scenarios, covering all the positive and negative scenarios.
 
-I have used pytest with page object model and pytest-html report
+I have used pytest with page object model and pytest-html report and also the zip file has the same implemented with Java and Cucumber
 
 List of automted testcases are    
 1. Sign-Up      
